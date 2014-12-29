@@ -62,6 +62,8 @@ lift to sign-up rate.
    procedures later** 
 
    (**Estimated Time: 30 mins**)
+   
+   ``See answer in ab_test.py``
 
 4. Based on the pilot, calculate the minimum sample size required to achieve
    80% power at 0.05 significance level, assuming equal sample size in both
@@ -71,7 +73,7 @@ lift to sign-up rate.
 
    (**Estimated Time: 20 mins**)
    
-   ``sdsd``
+   ``See answer in ab_test.py``
 
 5. State why running a pilot experiment allows us to more accurately
    determine the minimum sample size required for a certain power. 
