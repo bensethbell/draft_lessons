@@ -2,10 +2,9 @@
 
 Include your answers in ``afternoon_answers.md``.
 
-**Estimated Time: 30 mins**
-
 You are a data scientist at Etsy, a peer-to-peer e-commerce platform.
 Your task is to determine if attending local meetups increases a seller's sales.
+(**Estimated Time: 30 mins**)
 
 1. What is the problem if we use past sellers' sales and meetup data?
 
