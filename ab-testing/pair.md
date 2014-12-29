@@ -46,7 +46,8 @@ lift to sign-up rate.
     - Only allow each user to be recorded once in the whole experiment to
       to ensure the observations are independent
 
-2. State your null hypothesis and alternative hypothesis? 
+2. State your null hypothesis and alternative hypothesis?
+3. 
    (**Estimated Time: 5 mins**)
 
     - <b>H<sub>0</sub></b>: conversion<sub>new</sub> - conversion<sub>old</sub> = 0.001
@@ -56,16 +57,22 @@ lift to sign-up rate.
    collected data is in ``sample.csv``. Import the data into a pandas
    dataframe. **Hint: Write a function to check consistency between ab and
    landing_page columns and duplicate rows. You will need to repeat the same
-   procedures later**  (**Estimated Time: 30 mins**)
+   procedures later** 
+
+   (**Estimated Time: 30 mins**)
 
 4. Based on the pilot, calculate the minimum sample size required to achieve
    80% power at 0.05 significance level, assuming equal sample size in both
    old page and new page groups. Read ``power_functions.py`` and use the
    ``calc_min_sample()`` function. Estimate how long the whole experiment
-   would take if the experiment was to continue to run. (**Estimated Time: 20 mins**)
+   would take if the experiment was to continue to run. 
+
+   (**Estimated Time: 20 mins**)
 
 5. State why running a pilot experiment allows us to more accurately
-   determine the minimum sample size required for a certain power. (**Estimated Time: 5 mins**)
+   determine the minimum sample size required for a certain power. 
+
+   (**Estimated Time: 5 mins**)
 
    - Running a pilot informs us of a more accurate sign-up rate of the new
      page than guess-work. Subsequently, we are more informed about the sample
@@ -77,6 +84,7 @@ lift to sign-up rate.
    steps as in ``Qu 3.``.
    You will find there are some more rows than the expected minimum sample
    size. That is to buffer for rows removed for duplicate users.
+
    (**Estimated Time: 10 mins**)
 
 7. Calculate the p-value using a z-test.
