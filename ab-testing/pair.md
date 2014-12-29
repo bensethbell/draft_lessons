@@ -71,7 +71,7 @@ lift to sign-up rate.
 
    (**Estimated Time: 20 mins**)
    
-   ```sdsd```
+   ``sdsd``
 
 5. State why running a pilot experiment allows us to more accurately
    determine the minimum sample size required for a certain power. 
