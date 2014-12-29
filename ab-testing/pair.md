@@ -47,7 +47,7 @@ lift to sign-up rate.
       to ensure the observations are independent
 
 2. State your null hypothesis and alternative hypothesis?
-3. 
+
    (**Estimated Time: 5 mins**)
 
     - <b>H<sub>0</sub></b>: conversion<sub>new</sub> - conversion<sub>old</sub> = 0.001
