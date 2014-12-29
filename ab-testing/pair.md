@@ -45,8 +45,8 @@ lift to sign-up rate.
 
 2. State your null hypothesis and alternative hypothesis?
 
-    - H<sub>0</sub>: rate<sub>new</sub> - rate<sub>old</sub> eq 0.001
-    - H<sub>1</sub>: rate<sub>new</sub> - rate<sub>old</sub> not eq 0.001
+    - H<sub>0</sub>: conversion<sub>new</sub> - conversion<sub>old</sub> = 0.001
+    - H<sub>1</sub>: conversion<sub>new</sub> - conversion<sub>old</sub> &ne; 0.001
 
 3. You ran a pilot experiment according to ``1.`` for ~40 minutes. The
    collected data is in ``sample.csv``. Import the data into a pandas
