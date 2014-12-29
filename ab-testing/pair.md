@@ -36,6 +36,7 @@ lift to sign-up rate.
 
 1. Design an experiment **to collect data** in order to decide if the new page
    has 0.1% more sign-up rate than the old page? (**_3 bullet points_**)
+   (**Estimated Time: 10 mins**)
 
     - Randomly divert 50% of incoming users to the new page. The rest 50%
       will be directed to the old page.
@@ -43,25 +44,25 @@ lift to sign-up rate.
     - Only allow each user to be recorded once in the whole experiment to
       to ensure the observations are independent
 
-2. State your null hypothesis and alternative hypothesis?
+2. State your null hypothesis and alternative hypothesis? (**Estimated Time: 5 mins**)
 
-    - H<sub>0</sub>: conversion<sub>new</sub> - conversion<sub>old</sub> = 0.001
-    - H<sub>1</sub>: conversion<sub>new</sub> - conversion<sub>old</sub> &ne; 0.001
+    - <b>H<sub>0</sub></b>: conversion<sub>new</sub> - conversion<sub>old</sub> = 0.001
+    - <b>H<sub>1</sub></b>: conversion<sub>new</sub> - conversion<sub>old</sub> &ne; 0.001
 
-3. You ran a pilot experiment according to ``1.`` for ~40 minutes. The
+3. You ran a pilot experiment according to ``Qu 1.`` for ~40 minutes. The
    collected data is in ``sample.csv``. Import the data into a pandas
    dataframe. **Hint: Write a function to check consistency between ab and
    landing_page columns and duplicate rows. You will need to repeat the same
-   procedures later**
+   procedures later**  (**Estimated Time: 30 mins**)
 
 4. Based on the pilot, calculate the minimum sample size required to achieve
    80% power at 0.05 significance level, assuming equal sample size in both
    old page and new page groups. Read ``power_functions.py`` and use the
    ``calc_min_sample()`` function. Estimate how long the whole experiment
-   would take if the experiment was to continue to run.
+   would take if the experiment was to continue to run. (**Estimated Time: 20 mins**)
 
 5. State why running a pilot experiment allows us to more accurately
-   determine the minimum sample size required for a certain power.
+   determine the minimum sample size required for a certain power. (**Estimated Time: 5 mins**)
 
    - Running a pilot informs us of a more accurate sign-up rate of the new
      page than guess-work. Subsequently, we are more informed about the sample
@@ -70,9 +71,10 @@ lift to sign-up rate.
 
 6. The full experiment was executed as planned to achieve 80% power at 0.5. The
    data is in ``whole.csv``. Import the data and clean it following the same
-   steps as in ``3.``.
+   steps as in ``Qu 3.``.
    You will find there are some more rows than the expected minimum sample
    size. That is to buffer for rows removed for duplicate users.
+   (**Estimated Time: 10 mins**)
 
 7. Calculate the p-value using a z-test.
 
