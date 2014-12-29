@@ -1,6 +1,6 @@
 #Part 1: Experimental Design
 
-Answer the questions in ``afternoon_answers.md``.
+Include your answers in ``afternoon_answers.md``.
 
 **Estimated Time: 30 mins**
 
@@ -17,7 +17,7 @@ determine if local meetups _**causes**_ a seller to sell more?
 
 #Part 2: A / B Testing
 
-Answer the questions in ``afternoon_answers.md``.
+Include your answers in ``afternoon_answers.md``.
 
 Include your code in ``ab_test.py``.
 
