@@ -55,7 +55,9 @@ lift to sign-up rate.
 
 3. You ran a pilot experiment according to ``Qu 1.`` for ~40 minutes. The
    collected data is in ``sample.csv``. Import the data into a pandas
-   dataframe. **Hint: Write a function to check consistency between ab and
+   dataframe.
+
+   **Hint: Write a function to check consistency between ab and
    landing_page columns and duplicate rows. You will need to repeat the same
    procedures later** 
 
