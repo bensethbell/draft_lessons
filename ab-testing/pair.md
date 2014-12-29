@@ -1,6 +1,6 @@
 #Part 1: Experimental Design
 
-Include your answer to this exercise in ``afternoon_answers.md``
+Answer the questions in ``afternoon_answers.md``.
 
 **Estimated Time: 30 mins**
 
@@ -17,12 +17,12 @@ determine if local meetups _**causes**_ a seller to sell more?
 
 #Part 2: A / B Testing
 
-Include your answer to this exercise in ``afternoon_answers.md``.
+Answer the questions in ``afternoon_answers.md``.
 
 Include your code in ``ab_test.py``.
 
 Designers at Etsy have created a **new landing page** in an attempt to
-improve sign-up rate to local meetups.
+improve sign-up rate for local meetups.
 
 The historic sign-up rate for the **old landing page** is 10%.
 An improvement to only 10.1% would provide a lift of 1%.
@@ -32,22 +32,6 @@ the lift is not more or equal to 1%.
 
 Your task is to determine if the new_landing page can provide a 1% or more
 lift to sign-up rate.
-
-``sample.csv`` and ``whole.csv`` both have the following columns.
-1. `user_id`: A unique identifier for each user.
-
-2. `ts`: Time Stamp
-    - The epoch time that the user hit the landing_page.
-3. `landing_page`: The first page a user reaches on the site.
-    - If a user hits the old landing page -> old_page
-    - If a user hits the new landing page -> new_page
-4. `ab`: This denotes if the experiment is assigned to the control or to the treatment.
-    - If the user is assigned to control -> control
-    - If the user is assigned to treatment -> treatment
-5. `converted`: This denotes if a user answered the preference questions.
-    - If a user does answer the questions -> converted = 1
-    - If a user does not answer the questions -> converted = 0
-
 
 <br>
 
