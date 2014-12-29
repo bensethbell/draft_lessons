@@ -4,6 +4,7 @@ Include your answers in ``afternoon_answers.md``.
 
 You are a data scientist at Etsy, a peer-to-peer e-commerce platform.
 Your task is to determine if attending local meetups increases a seller's sales.
+
 (**Estimated Time: 30 mins**)
 
 1. What is the problem if we use past sellers' sales and meetup data?
@@ -36,6 +37,7 @@ lift to sign-up rate.
 
 1. Design an experiment **to collect data** in order to decide if the new page
    has 0.1% more sign-up rate than the old page? (**_3 bullet points_**)
+
    (**Estimated Time: 10 mins**)
 
     - Randomly divert 50% of incoming users to the new page. The rest 50%
@@ -44,7 +46,8 @@ lift to sign-up rate.
     - Only allow each user to be recorded once in the whole experiment to
       to ensure the observations are independent
 
-2. State your null hypothesis and alternative hypothesis? (**Estimated Time: 5 mins**)
+2. State your null hypothesis and alternative hypothesis? 
+   (**Estimated Time: 5 mins**)
 
     - <b>H<sub>0</sub></b>: conversion<sub>new</sub> - conversion<sub>old</sub> = 0.001
     - <b>H<sub>1</sub></b>: conversion<sub>new</sub> - conversion<sub>old</sub> &ne; 0.001
