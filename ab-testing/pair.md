@@ -93,10 +93,12 @@ lift to sign-up rate.
 
    (**Estimated Time: 10 mins**)
 
-7. Calculate the p-value using a z-test.
+   ``See answer in ab_test.py``
+
+7. Calculate the p-value using a z-test. Interpret the p-value. 
 
 
-7. Plot sample size and power. What happens if you change your effect size
+8. Plot sample size and power. What happens if you change your effect size
 two tail instead of one tail
 
 
