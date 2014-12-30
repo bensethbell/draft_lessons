@@ -51,32 +51,63 @@ lift to sign-up rate.
    (**Estimated Time: 5 mins**)
 
     - <b>H<sub>0</sub></b>: conversion<sub>new</sub> - conversion<sub>old</sub> = 0.001
-    - <b>H<sub>1</sub></b>: conversion<sub>new</sub> - conversion<sub>old</sub> &ne; 0.001
+    - <b>H<sub>1</sub></b>: conversion<sub>new</sub> - conversion<sub>old</sub> > 0.001
 
-3. You ran a pilot experiment according to ``Qu 1.`` for ~40 minutes. The
-   collected data is in ``sample.csv``. Import the data into a pandas
+3. You ran a pilot experiment according to ``Qu 1.`` for ~1 day. The
+   collected data is in ``experiment.csv``. Import the data into a pandas
    dataframe.
 
    **Hint: Write a function to check consistency between ab and
-   landing_page columns and duplicate rows. You will need to repeat the same
-   procedures later** 
-
-   (**Estimated Time: 30 mins**)
-   
-   ``See answer in ab_test.py``
-
-4. Based on the pilot, calculate the minimum sample size required to achieve
-   80% power at 0.05 significance level, assuming equal sample size in both
-   old page and new page groups. Read ``power_functions.py`` and use the
-   ``calc_min_sample()`` function. Estimate how long the whole experiment
-   would take if the experiment was to continue to run. 
+   landing_page columns and duplicate rows.**
 
    (**Estimated Time: 20 mins**)
-   
+
    ``See answer in ab_test.py``
 
+4. State a rationale for using a one-tailed z-test of a two-tailed z-test.
+   Calculate a p-value for a 0.1% lift from using the new page compare to the
+   old page. Fill in ``z_test()`` in ``ab_test.py`` to execute the z-test.
+
+   Based on the p-value alone, explain your decision to adopt the
+   new page or not.
+
+   - One tailed z-test is used because we will only adopt the new page if the
+     lift is larger than 0.1% with statistical significance. Otherwise, we keep
+     the old page. We don't need the lift to be signigicant lower than 0.1% to
+     abandon the new page and keep the old
+   - p-value: 0.244060255972. Based on the p-value alone, the lift is not
+     significantly larger than 0.1%. The null is not rejected, and the new
+     page is not adopted
+
+5. Based on the pilot, calculate the minimum sample size required to achieve
+   80% power at 0.05 significance level, assuming equal sample size in both
+   old page and new page groups. Read the doc string in ``power_functions.py``.
+
+   Use ``calc_min_sample()`` function to calculate the minimum sample required
+   to get 80% power at 0.05 significance level. Subsequently, calculate the
+   approximate time needed to run the experiment based on the number of user
+   in the pilot.
+
+   Use ``calc_power()`` to calculate the power of the pilot. Interpret what the
+   power means. Is the power enough to draw any conclusions?
+
+   (**Estimated Time: 20 mins**)
+
+   ``
+   For 80% power at 0.05 significance level:
+    - Minimum requred sample size: 1201311
+    - Approx. required time: 8.2 days
+    - Current power: 0.252200577093
+    - Interpretation: There is only 16.3% chance of detecting any statisitcally
+      significant difference from 0.1% between the old and new pages.
+    - The pilot sample size is underpowered and we can't interpret the
+      insignificant p-value from the z-test previously
+
+   See the code in ab_test.py
+   ``
+
 5. State why running a pilot experiment allows us to more accurately
-   determine the minimum sample size required for a certain power. 
+   determine the minimum sample size required for a certain power.
 
    (**Estimated Time: 5 mins**)
 
@@ -84,25 +115,3 @@ lift to sign-up rate.
      page than guess-work. Subsequently, we are more informed about the sample
      size needed to show statistical signifance of the difference between
      the new and the old page
-
-6. The full experiment was executed as planned to achieve 80% power at 0.5. The
-   data is in ``whole.csv``. Import the data and clean it following the same
-   steps as in ``Qu 3.``.
-   You will find there are some more rows than the expected minimum sample
-   size. That is to buffer for rows removed for duplicate users.
-
-   (**Estimated Time: 10 mins**)
-
-   ``See answer in ab_test.py``
-
-7. Calculate the p-value using a z-test. Interpret the p-value. 
-
-
-8. Plot sample size and power. What happens if you change your effect size
-two tail instead of one tail
-
-
-
-## `country.csv`
-* `user_id`: A unique identifier for each user.
-* `country`: Country of user.
