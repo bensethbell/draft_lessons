@@ -8,11 +8,23 @@ Your task is to determine if attending local meetups increases a seller's sales.
 (**Estimated Time: 30 mins**)
 
 1. What is the problem if we use past sellers' sales and meetup data?
+  - More competent sellers (higher sales) might just be more inclined to go
+    to local meetups, so the higher sales cannot be attributed to going to
+    local meetups alone
 
 2. What is the generic name for this problem?
+  - Confounding variable
 
 3. Outline the steps to design an experiment that would allow us to
 determine if local meetups _**causes**_ a seller to sell more?
+  - Randomly assign half of the sellers to go to local meetups, and
+    half of the sellers not to for a period of time, say 3 months
+  - Record the sales of the sellers in local meetup group and the non-local
+    meetup group
+  - Compare the means of the sales between the 2 groups using a two-sample
+    t-test for independent samples
+  - Determine if the group that goes to local meetup has a higher sales figure
+    at a predefined statistical significance level
 
 
 #Part 2: A / B Testing
