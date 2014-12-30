@@ -93,7 +93,7 @@ lift to sign-up rate.
 
    (**Estimated Time: 20 mins**)
 
-   ``
+   ```
    For 80% power at 0.05 significance level:
     - Minimum requred sample size: 1201311
     - Approx. required time: 8.2 days
@@ -104,7 +104,7 @@ lift to sign-up rate.
       insignificant p-value from the z-test previously
 
    See the code in ab_test.py
-   ``
+   ```
 
 5. State why running a pilot experiment allows us to more accurately
    determine the minimum sample size required for a certain power.
