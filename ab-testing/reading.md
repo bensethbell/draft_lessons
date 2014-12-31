@@ -19,7 +19,7 @@
             <a href="https://www.khanacademy.org/math/probability/statistical-studies/types-of-studies/v/analyzing-statistical-study">Experimental study</a>
         </td>
         <td>Understand when to use an experiment</td>
-        <td>3 mins <br> <b>(Watch at double speed</b></td>
+        <td>3 mins <br> <b>(Watch at double speed)</b></td>
     </tr>
     <tr>
         <td>
