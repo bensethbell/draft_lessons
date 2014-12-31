@@ -1,11 +1,11 @@
 <table>
-<th>
+<thead>
     <tr>
-        <td>Reading</td>
-        <td>Goal</td>
-        <td>Estimated Time</td>
+        <th>Reading</th>
+        <th>Goal</th>
+        <th>Estimated Time</th>
     </tr>
-</th>
+</thead>
 <tbody>
     <tr>
         <td>
