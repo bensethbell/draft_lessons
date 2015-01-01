@@ -70,7 +70,7 @@ lift to sign-up rate.
 
    Import ``ProportionPower()`` from ``power_functions.py``. Create an
    instance of ``ProportionPower()`` using the appropriate parameters (read
-   the doc in ``power_functions.py``).Then you can run the following functions
+   the doc in ``power_functions.py``).Then you can run the below 2 functions
    in ``ProportionPower()``. ``power_functions.py`` is already in the
    repo.
 
