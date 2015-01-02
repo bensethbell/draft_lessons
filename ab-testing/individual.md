@@ -7,10 +7,10 @@ Include the answers in ``morning_answers.md``
 
    (**Estimated Time: 5 mins**)
 
-   a. Does workers who take more than 3 weeks of holiday more likely to make
+   a. Do workers who take more than 3 weeks of holiday more likely to make
       a typo in their reports?
 
-   b. Does rats living in the artic have a higher motality rate?
+   b. Do rats living in the artic have a higher motality rate?
 
 
 2. A study looked at the incidence of hospitalization for heart failure in Ohio,
@@ -27,11 +27,11 @@ Include the answers in ``morning_answers.md``
 
 
 ##Part 2: Analyzing Click Through Rate
-Include the word answers for ``4,5,6,8`` in ``morning_answers.md``
+Include the word answers for ``1,4,5,6,8`` in ``morning_answers.md``
 
 For the code, you may use an ipython notebook to get started with.
 
-_**But you must submit your final code in**_ ``nyt.py``
+_**Please submit your final code in**_ ``nyt.py``
 
 We will use hypothesis testing to analyze **Click Through Rate (CTR)** on the New York Times website.
 CTR is defined as the number of clicks the user make per impression that is made upon the user.
@@ -46,6 +46,7 @@ the following groups:
 1. Calculate the p value adjusted for multiple testing at 0.05 significance level.
    (**Estimated Time: 2 mins**)
 
+   ``Include your answer in morning_answers.md``
 
 2. Load ``data/nyt1.csv`` in a pandas dataframe.
 
