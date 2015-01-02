@@ -4,13 +4,16 @@ You are a data scientist at Etsy, a peer-to-peer e-commerce platform.
 Your task is to determine if attending local meetups increases a seller's sales.
 
 1. What is the problem if we use past sellers' sales and meetup data?
+
    ``Your answer here``
 
 2. What is the generic name for this problem?
+
    ``Your answer here``
 
 3. Outline the steps to design an experiment that would allow us to
 determine if local meetups _**causes**_ a seller to sell more?
+
    ``Your answer here``
 
 
