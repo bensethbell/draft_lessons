@@ -88,9 +88,9 @@ the following groups:
    (**Estimated Time: 5 mins**)
 
 6. Determine if the mean CTR between male users and female users is
-   statistically different. Is the difference in mean CTR more worthy
-   of further investigation between signed-in users and non-signed-in
-   users or between male and female? Explain your answer.
+   statistically different. Is the difference in mean CTR between signed-in users
+   and non-signed-in users more worthy of further investigation than that between
+   male and female? Explain your answer.
 
    (**Estimated Time: 10 mins**)
 
