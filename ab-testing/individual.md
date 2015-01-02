@@ -63,7 +63,7 @@ the following groups:
 4. Plot the distribution of each column in the dataframe. Do that using ``data.hist()``.
    Check out the argments you can use with the function
    [here](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.hist.html).
-   Set the ``figsize=(12,5)`` to make sure the graph is decipherable.
+   Set the ``figsize=(12,5)`` to make sure the graph is readable.
 
    (**Estimated Time: 5 mins**)
 
