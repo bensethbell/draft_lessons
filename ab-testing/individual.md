@@ -108,13 +108,13 @@ the following groups:
 
 8. Determine the pairs of age groups where the difference in mean CTR is
    statistically significant. Collect the p values and the difference of the
-   means in each pair in a ``DataFrame()``.
+   means in each pair in a ``DataFrame``.
 
    Rank (in descending order) the difference in mean CTR for the pairs that are statistically significant.
    Comment on the trend you observe for groups ``(64, 1000]`` and ``(7, 18]``.
    Feel free to include additional trends you observe.
 
-   Rank (in ascedning order)the difference in mean CTR for the pairs that
+   Rank (in ascending order) the difference in mean CTR for the pairs that
    are _statistically insignificant_. State the 3 groups that are the least
    different in mean CTR and provide an explanation for why that is.
 
