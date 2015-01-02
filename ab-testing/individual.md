@@ -79,9 +79,8 @@ the following groups:
    and the non-signed-in users is statistically different. Explain how you
    arrive at your conclusion.
 
-   The Welch t-test assume the two populations the samples are drawn have
-   different variances. Refer to the ``why_welch_t.pdf`` in ``readings`` if
-   you are curious as to why Welch t-test.
+   The Welch t-test assumes the two populations in which the samples are drawn from
+   have different variances.
 
    ```python
    scipy.stats.ttest_ind(a, b, equal_var=False)
