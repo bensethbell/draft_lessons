@@ -55,8 +55,7 @@ the following groups:
 
    (**Estimated Time: 2 mins**)
 
-3. We will compare the **Click Through Rate (CTR)** of the users later in the sprint.
-   Make a new column ``CTR`` using the ``Impressions`` and the ``Clicks`` columns.
+3. Make a new column ``CTR`` using the ``Impressions`` and the ``Clicks`` columns.
    Remember to remove the rows with ``0`` impressions.
 
    (**Estimated Time: 5 mins**)
