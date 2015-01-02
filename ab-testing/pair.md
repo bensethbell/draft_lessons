@@ -19,7 +19,9 @@ determine if local meetups _**causes**_ a seller to sell more?
 
 Include your answers in ``afternoon_answers.md``.
 
-Include your code in ``ab_test.py``.
+For the code, you may use an ipython notebook to get started with.
+
+But you must submit your final code in ``ab_test.py``
 
 Include these few imports at the beginning of ``ab_test.py``.
 You will need them later
