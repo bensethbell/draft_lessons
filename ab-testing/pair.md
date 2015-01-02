@@ -21,6 +21,15 @@ Include your answers in ``afternoon_answers.md``.
 
 Include your code in ``ab_test.py``.
 
+Include these few imports at the beginning of ``ab_test.py``.
+You will need them later
+
+```python
+import pandas as pd
+from z_test import z_test
+from power_functions import ProportionPower
+```
+
 Designers at Etsy have created a **new landing page** in an attempt to
 improve sign-up rate for local meetups.
 
