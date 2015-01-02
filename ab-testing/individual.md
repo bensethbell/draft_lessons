@@ -47,7 +47,6 @@ the following groups:
 
    (**Estimated Time: 2 mins**)
 
-   ``Include your answer in morning_answers.md``
 
 2. Load ``data/nyt1.csv`` in a pandas dataframe.
 
@@ -74,16 +73,12 @@ the following groups:
    the two sets of distributions, describe the differences between users who are signed in and not
    signed in?
 
-   ``Include your description in morning_answers.md``
-
    (**Estimated Time: 10 mins**)
 
 
 5. Use a Welch t-test to determine if the mean CTR between the signed-in users
    and the non-signed-in users is statistically different. Explain how you
    arrive at your conclusion.
-
-   ``Include your explanation in morning_answers.md``
 
    The Welch t-test assume the two populations the samples are drawn have
    different variances. Refer to the ``why_welch_t.pdf`` in ``readings`` if
@@ -98,8 +93,6 @@ the following groups:
    statistically different. Is the difference in mean CTR more worthy
    of further investigation between signed-in users and non-signed-in
    users or between male and female? Explain your answer.
-
-   ``Include your explanation in morning_answers.md``
 
    (**Estimated Time: 10 mins**)
 
@@ -126,8 +119,6 @@ the following groups:
    Rank (in ascedning order)the difference in mean CTR for the pairs that
    are _statistically insignificant_. State the 3 groups that are the least
    different in mean CTR and provide an explanation for why that is.
-
-   ``Include your explanation in morning_answers.md``
 
    (**Estimated Time: 20 mins**)
 
