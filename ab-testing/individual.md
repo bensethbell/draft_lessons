@@ -67,7 +67,7 @@ the following groups:
 
    (**Estimated Time: 5 mins**)
 
-4. Make 2 dataframes separating the rows where the users who are signed in and user who are not signed in.
+4. Make 2 dataframes separating the rows where the users who are signed in and users who are not signed in.
    Plot the distributions of the columns in each of the dataframes. By visually inspecting
    the two sets of distributions, describe the differences between users who are signed in and not
    signed in?
