@@ -119,6 +119,17 @@ the following groups:
 
    (**Estimated Time: 10 mins**)
 
+    ```python
+    signin_data = data[data['Signed_In'] == 1]
+    notsignin_data = data[data['Signed_In'] == 0]
+    plot_hist(signin_data, 'Signed In', 'g')
+    plot_hist(notsignin_data, 'Not Signed In', 'r')
+    ```
+
+    ![png](morning_solutions_files/morning_solutions_7_0.png)
+
+    ![png](morning_solutions_files/morning_solutions_7_1.png)
+
 
 5. Use a Welch t-test to determine if the mean CTR between the signed-in users
    and the non-signed-in users is statistically different. Explain how you
