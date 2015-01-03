@@ -86,6 +86,11 @@ the following groups:
 3. Make a new column ``CTR`` using the ``Impressions`` and the ``Clicks`` columns.
    Remember to remove the rows with ``0`` impressions.
 
+   ```python
+   data = data[data['Impressions'] != 0]
+   data['CTR'] = data['Clicks'] / data['Impressions'].astype(float)
+   ```
+
    (**Estimated Time: 5 mins**)
 
 4. Plot the distribution of each column in the dataframe. Do that using ``data.hist()``.
@@ -94,6 +99,18 @@ the following groups:
    Set the ``figsize=(12,5)`` to make sure the graph is readable.
 
    (**Estimated Time: 5 mins**)
+
+    ```python
+    def plot_hist(df, title, color):
+        df.hist(figsize=(12, 5), grid=False, normed=True, color=color, alpha=.2)
+        # suptitle to place a title in the center of the figure
+        # x,y to adjust where the title is placed
+        plt.suptitle(title, size=18, weight='bold', y=1.05)
+
+    plot_hist(data, 'Overall', 'b')
+    ```
+
+    ![png](morning_solutions_files/morning_solutions_6_0.png)
 
 4. Make 2 dataframes separating the rows where the users who are signed in and users who are not signed in.
    Plot the distributions of the columns in each of the dataframes. By visually inspecting
