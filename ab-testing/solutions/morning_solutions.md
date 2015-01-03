@@ -143,6 +143,42 @@ the following groups:
    ```
    (**Estimated Time: 5 mins**)
 
+    ```python
+    def t_test(gp1_df, gp2_df, gp1_name, gp2_name):
+        fig = plt.figure()
+        gp1_mean = gp1_df['CTR'].mean()
+        gp2_mean = gp2_df['CTR'].mean()
+
+        print '%s Mean CTR: %s' % (gp1_name, gp1_mean)
+        print '%s Mean CTR: %s' % (gp2_name, gp2_mean)
+        print 'diff in mean:' , abs(gp2_mean - gp1_mean)
+        p_val = scs.ttest_ind(gp1_df['CTR'], gp2_df['CTR'], equal_var=False)[1]
+        print 'p value is:', p_val
+
+        gp1_df['CTR'].hist(normed=True, label=gp1_name, color='g', alpha=0.3)
+        gp2_df['CTR'].hist(normed=True, label=gp2_name, color='r', alpha=0.3)
+        plt.axvline(gp1_mean, color='r', alpha=0.6, lw=2)
+        plt.axvline(gp2_mean, color='g', alpha=0.6, lw=2)
+
+        plt.ylabel('Probability Density')
+        plt.xlabel('CTR')
+        plt.legend()
+        plt.grid('off')
+
+
+    t_test(signin_data, notsignin_data, 'Signed In', 'Not Signed In')
+    ```
+
+    ```
+    Signed In Mean CTR: 0.0142536352321
+    Not Signed In Mean CTR: 0.0283549070617
+    diff in mean: 0.0141012718295
+    p value is: 0.0
+    ```
+
+    ![png](morning_solutions_files/morning_solutions_9_1.png)
+
+
 6. Determine if the mean CTR between male users and female users is
    statistically different. Is the difference in mean CTR between signed-in users
    and non-signed-in users more worthy of further investigation than that between
@@ -150,8 +186,27 @@ the following groups:
 
    (**Estimated Time: 10 mins**)
 
+    ```python
+    male = signin_data[signin_data['Gender'] == 1]
+    female = signin_data[signin_data['Gender'] == 0]
+    t_test(male, female, 'M', 'F')
+    ```
+
+    ```
+    M Mean CTR: 0.0139185242976
+    F Mean CTR: 0.0146220121839
+    diff in mean: 0.000703487886268
+    p value is: 0.00100285273131
+
+    The difference in CTR between signed in and non-signed users are more
+    worthy of further investigation since the difference in CTR is greater.
+    The female/male CTR difference is only marginally significant (0.0010 < 0.00217).
+    The signed-in/non_signed CTR difference is more significant than that of
+    male/female (0.0 < 0.00217).
+    ```
+
 7. Calculate a new column called AgeGroup, which bins Age into the following buckets
-   ``(18, 24]', '(24, 34]', '(34, 44]', '(44, 54]', '(54, 64]', '(64, 1000]', '(7, 18]'``
+   ``'(18, 24]', '(24, 34]', '(34, 44]', '(44, 54]', '(54, 64]', '(64, 1000]', '(7, 18]'``
 
    Use only the rows where the users are signed in. The non-signed in users
    all have age 0, which indicates the data is not available.
@@ -160,6 +215,18 @@ the following groups:
    ``pandas.cut(signin_data['Age'], [7, 18, 24, 34, 44, 54, 64, 1000])``
 
    (**Estimated Time: 5 mins**)
+
+   ```python
+   signin_data['age_groups'] = pd.cut(signin_data['Age'], [7, 18, 24, 34, 44, 54, 64, 1000])
+
+
+   signin_data['age_groups'].value_counts().sort_index().plot(kind='bar', grid=False)
+   plt.xlabel('Age Group')
+   plt.ylabel('Number of users')
+   plt.savefig('age_gp_freq.png')
+   ```
+
+  ![png](morning_solutions_files/morning_solutions_12_0.png)
 
 
 8. Determine the pairs of age groups where the difference in mean CTR is
@@ -175,4 +242,255 @@ the following groups:
    different in mean CTR and provide an explanation for why that is.
 
    (**Estimated Time: 20 mins**)
+
+   ```python
+   results = pd.DataFrame()
+   combos = combinations(pd.unique(signin_data['age_groups']), 2)
+   for age1, age2 in combos:
+      ctr1 = signin_data[signin_data['age_groups'] == age1]['CTR']
+      ctr2 = signin_data[signin_data['age_groups'] == age2]['CTR']
+      p_val = scs.ttest_ind(ctr1, ctr2, equal_var=False)[1]
+      ctr1_mean = ctr1.mean()
+      ctr2_mean = ctr2.mean()
+      diff = abs(ctr1_mean - ctr2_mean)
+      results = results.append(dict(one=age1, two=age2,
+                                    mean1=ctr1_mean, mean2=ctr2_mean,
+                                    diff=diff, p=p_val), ignore_index=True)
+   results = results[['one', 'two', 'mean1', 'mean2', 'diff', 'p']]
+
+
+   results[results['p'] < alpha].sort('diff', ascending=False)
+   ```
+
+   <div style="max-height:1000px;max-width:1500px;overflow:auto;">
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>one</th>
+          <th>two</th>
+          <th>mean1</th>
+          <th>mean2</th>
+          <th>diff</th>
+          <th>p</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>10</th>
+          <td> (64, 1000]</td>
+          <td>   (18, 24]</td>
+          <td> 0.029803</td>
+          <td> 0.009720</td>
+          <td> 0.020082</td>
+          <td> 2.458627e-272</td>
+        </tr>
+        <tr>
+          <th>8 </th>
+          <td> (64, 1000]</td>
+          <td>   (44, 54]</td>
+          <td> 0.029803</td>
+          <td> 0.009958</td>
+          <td> 0.019845</td>
+          <td> 1.430923e-295</td>
+        </tr>
+        <tr>
+          <th>7 </th>
+          <td> (64, 1000]</td>
+          <td>   (24, 34]</td>
+          <td> 0.029803</td>
+          <td> 0.010146</td>
+          <td> 0.019656</td>
+          <td> 7.860398e-285</td>
+        </tr>
+        <tr>
+          <th>0 </th>
+          <td>   (34, 44]</td>
+          <td> (64, 1000]</td>
+          <td> 0.010286</td>
+          <td> 0.029803</td>
+          <td> 0.019516</td>
+          <td> 5.245541e-288</td>
+        </tr>
+        <tr>
+          <th>22</th>
+          <td>    (7, 18]</td>
+          <td>   (18, 24]</td>
+          <td> 0.026585</td>
+          <td> 0.009720</td>
+          <td> 0.016865</td>
+          <td> 6.900980e-144</td>
+        </tr>
+        <tr>
+          <th>18</th>
+          <td>   (44, 54]</td>
+          <td>    (7, 18]</td>
+          <td> 0.009958</td>
+          <td> 0.026585</td>
+          <td> 0.016628</td>
+          <td> 4.014382e-151</td>
+        </tr>
+        <tr>
+          <th>14</th>
+          <td>   (24, 34]</td>
+          <td>    (7, 18]</td>
+          <td> 0.010146</td>
+          <td> 0.026585</td>
+          <td> 0.016439</td>
+          <td> 7.449266e-146</td>
+        </tr>
+        <tr>
+          <th>3 </th>
+          <td>   (34, 44]</td>
+          <td>    (7, 18]</td>
+          <td> 0.010286</td>
+          <td> 0.026585</td>
+          <td> 0.016299</td>
+          <td> 4.575147e-146</td>
+        </tr>
+        <tr>
+          <th>25</th>
+          <td>   (18, 24]</td>
+          <td>   (54, 64]</td>
+          <td> 0.009720</td>
+          <td> 0.020307</td>
+          <td> 0.010586</td>
+          <td> 1.007813e-130</td>
+        </tr>
+        <tr>
+          <th>20</th>
+          <td>   (44, 54]</td>
+          <td>   (54, 64]</td>
+          <td> 0.009958</td>
+          <td> 0.020307</td>
+          <td> 0.010349</td>
+          <td> 2.525271e-151</td>
+        </tr>
+        <tr>
+          <th>16</th>
+          <td>   (24, 34]</td>
+          <td>   (54, 64]</td>
+          <td> 0.010146</td>
+          <td> 0.020307</td>
+          <td> 0.010160</td>
+          <td> 5.668132e-141</td>
+        </tr>
+        <tr>
+          <th>5 </th>
+          <td>   (34, 44]</td>
+          <td>   (54, 64]</td>
+          <td> 0.010286</td>
+          <td> 0.020307</td>
+          <td> 0.010020</td>
+          <td> 7.523228e-144</td>
+        </tr>
+        <tr>
+          <th>11</th>
+          <td> (64, 1000]</td>
+          <td>   (54, 64]</td>
+          <td> 0.029803</td>
+          <td> 0.020307</td>
+          <td> 0.009496</td>
+          <td>  9.214903e-56</td>
+        </tr>
+        <tr>
+          <th>23</th>
+          <td>    (7, 18]</td>
+          <td>   (54, 64]</td>
+          <td> 0.026585</td>
+          <td> 0.020307</td>
+          <td> 0.006278</td>
+          <td>  8.273993e-20</td>
+        </tr>
+        <tr>
+          <th>9 </th>
+          <td> (64, 1000]</td>
+          <td>    (7, 18]</td>
+          <td> 0.029803</td>
+          <td> 0.026585</td>
+          <td> 0.003218</td>
+          <td>  3.563408e-05</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>15 rows × 6 columns</p>
+  </div>
+
+  ```results[results['p'] > alpha].sort('diff', ascending=True)```
+
+  <div style="max-height:1000px;max-width:1500px;overflow:auto;">
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>one</th>
+          <th>two</th>
+          <th>mean1</th>
+          <th>mean2</th>
+          <th>diff</th>
+          <th>p</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1 </th>
+          <td> (34, 44]</td>
+          <td> (24, 34]</td>
+          <td> 0.010286</td>
+          <td> 0.010146</td>
+          <td> 0.000140</td>
+          <td> 0.624662</td>
+        </tr>
+        <tr>
+          <th>13</th>
+          <td> (24, 34]</td>
+          <td> (44, 54]</td>
+          <td> 0.010146</td>
+          <td> 0.009958</td>
+          <td> 0.000189</td>
+          <td> 0.514689</td>
+        </tr>
+        <tr>
+          <th>19</th>
+          <td> (44, 54]</td>
+          <td> (18, 24]</td>
+          <td> 0.009958</td>
+          <td> 0.009720</td>
+          <td> 0.000237</td>
+          <td> 0.477902</td>
+        </tr>
+        <tr>
+          <th>2 </th>
+          <td> (34, 44]</td>
+          <td> (44, 54]</td>
+          <td> 0.010286</td>
+          <td> 0.009958</td>
+          <td> 0.000329</td>
+          <td> 0.233928</td>
+        </tr>
+        <tr>
+          <th>15</th>
+          <td> (24, 34]</td>
+          <td> (18, 24]</td>
+          <td> 0.010146</td>
+          <td> 0.009720</td>
+          <td> 0.000426</td>
+          <td> 0.213658</td>
+        </tr>
+        <tr>
+          <th>4 </th>
+          <td> (34, 44]</td>
+          <td> (18, 24]</td>
+          <td> 0.010286</td>
+          <td> 0.009720</td>
+          <td> 0.000566</td>
+          <td> 0.087470</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>6 rows × 6 columns</p>
+  </div>
+
+
+
 
